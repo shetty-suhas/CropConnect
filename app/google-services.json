@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "110872367187",
+    "project_id": "cropconnect-5cc83",
+    "storage_bucket": "cropconnect-5cc83.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110872367187:android:950e54d9c167799a5536a6",
+        "android_client_info": {
+          "package_name": "com.crop.cropconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110872367187-erqr1h5oendbqvehnb7j5lpd49sh1r7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ2xqgcip6HoMJtKGokBhQ8p8RFf8VHIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110872367187-erqr1h5oendbqvehnb7j5lpd49sh1r7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
