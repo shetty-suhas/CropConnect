@@ -12,7 +12,7 @@
         android:text="Login"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:textColor="#2E7D32"
+        android:textColor="@color/green"
         android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:errorEnabled="true"
+        app:boxStrokeColor="@color/green"
+        app:hintTextColor="@color/green"
+        app:errorTextColor="@color/error_color"
         app:layout_constraintTop_toBottomOf="@id/loginTitle">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -30,7 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -40,6 +45,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:errorEnabled="true"
+        app:boxStrokeColor="@color/green"
+        app:hintTextColor="@color/green"
+        app:errorTextColor="@color/error_color"
         app:passwordToggleEnabled="true"
         app:layout_constraintTop_toBottomOf="@id/emailLayout">
 
@@ -48,7 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,6 +81,7 @@
         android:layout_height="wrap_content"
         android:text="New User? Sign Up"
         android:textAllCaps="false"
+        android:textColor="@color/green"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,15 +93,32 @@
         android:layout_height="wrap_content"
         android:text="Forgot Password?"
         android:textAllCaps="false"
+        android:textColor="@color/green"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/newUserButton" />
+
+    <ImageView
+        android:id="@+id/loginImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:alpha="0.95"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newUserButton"
+        app:layout_constraintHeight_percent="0.35"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
+        android:indeterminateTint="@color/green"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.CropConnect." parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/green</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondaryVariant">@color/green</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Error text style -->
+    <style name="ErrorTextAppearance" parent="TextAppearance.Design.Error">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/error_color</item>
+    </style>
+
+    <!-- Helper text style -->
+    <style name="HelperTextAppearance" parent="TextAppearance.Design.HelperText">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- Input field style -->
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="errorEnabled">true</item>
+        <item name="helperTextEnabled">true</item>
+        <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
+        <item name="helperTextTextAppearance">@style/HelperTextAppearance</item>
+        <item name="boxStrokeErrorColor">@color/error_color</item>
+        <item name="errorTextColor">@color/error_color</item>
+        <item name="boxStrokeColor">@color/green</item>
+        <item name="hintTextColor">@color/green</item>
+    </style>
+</resources>
