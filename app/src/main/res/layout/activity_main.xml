@@ -6,30 +6,69 @@
     android:background="@drawable/main_background">
 
     <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to"
-        android:textSize="24sp"
-        android:textColor="#2E7D32"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="sans-serif-medium"
         android:text="CropConnect"
+        android:textColor="#2E7D32"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:textColor="#2E7D32"
-        android:fontFamily="sans-serif-medium"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeText" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ViewFlipper
+        android:id="@+id/textFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintBottom_toTopOf="@id/loginButton"
+        app:layout_constraintTop_toBottomOf="@id/titleText">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your produce, your price—find the best mandi near you!"
+            android:textAlignment="center"
+            android:textColor="#2E7D32"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bridge the gap! Discover nearby mandis in just a tap."
+            android:textAlignment="center"
+            android:textColor="#2E7D32"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sell smarter, not harder—connect with mandis effortlessly!"
+            android:textAlignment="center"
+            android:textColor="#2E7D32"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maximize your profits by selling at the right mandi!"
+            android:textAlignment="center"
+            android:textColor="#2E7D32"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Empowering farmers to sell better, faster, and closer."
+            android:textAlignment="center"
+            android:textColor="#2E7D32"
+            android:textSize="18sp"/>
+
+    </ViewFlipper>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"

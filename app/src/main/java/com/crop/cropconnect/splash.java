@@ -17,21 +17,11 @@ public class splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash);
 
-        // Initialize Firebase Auth first
+        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        // Check if user is already signed in
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            // User is signed in, directly go to dashboard
-            startActivity(new Intent(splash.this, dashboard.class));
-            finish();
-            return;
-        }
-
-        // If no user is signed in, show splash animation and then go to MainActivity
-        setContentView(R.layout.activity_splash);
         TextView appNameText = findViewById(R.id.appNameText);
         appNameText.setTranslationY(1000f);
 
@@ -42,7 +32,7 @@ public class splash extends AppCompatActivity {
                 1000f,
                 0f
         );
-        moveUpAnimator.setDuration(3000);
+        moveUpAnimator.setDuration(1500);
         moveUpAnimator.setInterpolator(new DecelerateInterpolator());
 
         // Create animation for fading in
@@ -52,7 +42,7 @@ public class splash extends AppCompatActivity {
                 0f,
                 1f
         );
-        fadeAnimator.setDuration(3000);
+        fadeAnimator.setDuration(1500);
 
         // Combine animations
         AnimatorSet animatorSet = new AnimatorSet();
@@ -64,8 +54,15 @@ public class splash extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Intent intent = new Intent(splash.this, MainActivity.class);
-                startActivity(intent);
+                // Check authentication after animation completes
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+                if (currentUser != null) {
+                    // User is signed in, go to dashboard
+                    startActivity(new Intent(splash.this, dashboard.class));
+                } else {
+                    // No user signed in, go to MainActivity
+                    startActivity(new Intent(splash.this, MainActivity.class));
+                }
                 finish();
             }
 
@@ -79,13 +76,5 @@ public class splash extends AppCompatActivity {
         animatorSet.start();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            startActivity(new Intent(splash.this, dashboard.class));
-            finish();
-        }
-    }
+    // Remove onStart override as we don't want to check authentication until animation completes
 }
